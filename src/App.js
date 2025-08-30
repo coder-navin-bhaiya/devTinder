@@ -13,10 +13,23 @@ const app = express();
 //     res.send("Hello from the server!");
 // } );
 
-//? handel from "/"
-app.use("/", (req,res)=>{
-    res.send("Hello from dashboard!");
+
+//!Testing of "/user" by GET,PUSH,DELETE
+app.get("/user", (req, res)=>{
+    //send database
+    res.send({firstName: "Navin", lastName: "Kumar"})
 } );
+
+app.post("/user", (req,res)=>{
+    console.log("save data to the Database");
+    //than send the response
+    res.send("Data successfully saved to the database!")
+})
+app.delete("/user", (req,res)=>{
+    
+    res.send("Data successfully deleted!")
+})
+
 
 //? for route "/hello"
 app.use("/hello", (req,res)=>{
@@ -29,7 +42,10 @@ app.use("/test", (req,res)=>{
 } );
 
 
-
+//? handel from "/"
+app.use("/", (req,res)=>{
+    res.send("Hello from dashboard!");
+} );
 
 
 //!step-3:--
