@@ -38,6 +38,7 @@ app.use("/hello", (req,res)=>{
 
 //?handel for route "/test"
 app.use("/test", (req,res)=>{
+    console.log(req.query);
     res.send("Hello from the server from path test!");
 } );
 
